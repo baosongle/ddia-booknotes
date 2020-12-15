@@ -68,7 +68,7 @@ leap seconds 可能会让网络瘫痪（不太懂）
 
 在分布式系统中，如果有两个节点的时钟相差太大，可能会导致对事件的排序发生错误。例如下图中节点1 和节点3 的时钟相差不到 3ms，他们分别修改了 x 的值后，将最新值发送到节点2 上，节点2 错误地把 x 设置为了 1
 
-![_20201212132715](images/_20201212132715.jpg)
+![](images/_20201212132715.jpg)
 
 这个系统中使用的冲突解决算法是 last write wins（LWW），在多主和无主系统中使用较多。即使在客户端上生成修改的时间戳，也不能解决一些问题
 
@@ -111,7 +111,7 @@ leap seconds 可能会让网络瘫痪（不太懂）
 
 在下图中，Client 1 申请到 token 后发生了一次 GC，在这期间 token 失效；而 Client 2 同时申请到了新的 token，为了避免有两个 Client 发生并发读写，Storage 在接受 Client 的写请求时，需要对 token 进行验证，这就叫 fencing token 技术
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a6340675-141e-4b04-91f9-e3a3ebb5819c/Untitled.png](images/Untitled.png)
+![](images/Untitled.png)
 
 ### 拜占庭问题
 
